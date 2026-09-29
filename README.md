@@ -1,36 +1,70 @@
-## Cropland-CD
+# BAUNet: Fine-Grained Cropland Change Detection
 
-The pytorch implementation for **MSCANet** in paper "[A CNN-transformer Network with Multi-scale Context Aggregation for Fine-grained Cropland Change Detection](https://ieeexplore.ieee.org/document/9780164)" on [IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing](https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/).  
+This repository provides selected code and research resources associated with the manuscript:
 
-## Requirements
-- Python 3.6
-- Pytorch 1.7.0
+**Fine-Grained Cropland Change Detection from Sub-Meter Henan-1 Imagery Using a Cross-Scale Attention Network**
 
+## Overview
 
-## Datasets
-### CropLand Change Dection (CLCD) Dataset
-The CLCD dataset consists of 600 pairs image of cropland change samples, with 360 pairs for training, 120 pairs for validation and 120 pairs for testing.
-The bi-temporal images in CLCD were collected by Gaofen-2 in Guangdong Province, China, in 2017 and 2019, respectively, with spatial resolution ranged from 0.5 to 2 m. Each group of samples is composed of two images of 512 × 512 and a corresponding binary label of cropland change.
+BAUNet is developed for fine-grained cropland change detection in very-high-resolution remote sensing imagery, with particular attention to small, fragmented, and boundary-sensitive change regions under cross-season observation conditions.
 
-- Download the CLCD Dataset: [OneDrive](https://mail2sysueducn-my.sharepoint.com/:f:/g/personal/liumx23_mail2_sysu_edu_cn/Ejm7aufQREdIhYf5yxSZDIkBr68p2AUQf_7BAEq4vmV0pg?e=ZWI3oy) | [Baidu](https://pan.baidu.com/s/1Un-bVxUm1N9IHiDOXLLHlg?pwd=miu2)
-- Download the [HRSCD Dataset](https://ieee-dataport.org/open-access/hrscd-high-resolution-semantic-change-detection-dataset)
+The proposed framework contains a shared-weight Siamese encoder, cross-scale feature enhancement, and progressive spatial reconstruction for parcel-level cropland change detection.
 
+## Available Resources
 
+The current repository provides selected research resources, including:
 
+- Data loading utilities
+- Prediction and inference utilities
+- Dataset organization examples
+- Experimental information
+- Selected BCD dataset samples
 
+Core implementation details of the proposed model are not included in the current public version.
+
+## BCD Dataset
+
+BCD (Bi-temporal Cropland Change Detection Dataset) was constructed using 0.75 m Henan-1 satellite imagery over Kaifeng, Henan Province, China.
+
+The complete dataset contains:
+
+- 4,747 bi-temporal image pairs
+- Image size: 256 × 256 pixels
+- Pixel-level binary change annotations
+- Training set: 2,848 pairs
+- Validation set: 950 pairs
+- Test set: 949 pairs
+
+A representative subset of BCD will be made publicly available for academic research.
+
+## Public Benchmark Datasets
+
+The experiments also use the following public cropland change detection datasets:
+
+- CLCD
+- PX-CLCD
+
+Please refer to their original repositories for data access.
+
+## Code
+
+Currently available:
+
+- `dataloader.py`: dataset loading utilities
+- `predict.py`: prediction utilities
+
+Additional research resources may be released in future updates.
+
+## Data Availability
+
+A representative subset of the BCD dataset will be provided in this repository.
+
+The complete BCD dataset may be available from the corresponding author for academic research purposes upon reasonable request and subject to applicable data-use restrictions.
 
 ## Citation
 
-Please cite our paper if you use this code in your work:
+Citation information will be added after publication.
 
-```
-@ARTICLE{9780164,
-  author={Liu, Mengxi and Chai, Zhuoqun and Deng, Haojun and Liu, Rong},
-  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing}, 
-  title={A CNN-Transformer Network With Multiscale Context Aggregation for Fine-Grained Cropland Change Detection}, 
-  year={2022},
-  volume={15},
-  number={},
-  pages={4297-4306},
-  doi={10.1109/JSTARS.2022.3177235}}
-```
+## Contact
+
+For academic inquiries regarding BAUNet or the BCD dataset, please contact the authors of the manuscript.
